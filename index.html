@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate JS</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background: #1e1e1e;
+            padding:25px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 666px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            color: white;
+        }
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+        h3 {text-align: center;}
+        h4 {text-align: center;}
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            background: #353535;
+            color: white;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            width: 100%;
+            margin-top: 15px;
+            font-weight: bold;
+            background: #111167;
+            color:white;
+            transition: all 0.3s ease;
+            border:none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        button:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            background: #444;
+            transform: translateY(-3px)
+        }
+        button:active {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateY(1px);
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-radius: 20px;
+            padding: 8px;
+            text-align: left;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+        }
+        td, th {
+            padding: 10px;
+        }
+        .link {
+            text-decoration: none;
+            font-weight: bold;
+            color:white;
+            transition: all 0.3s ease;
+        }
+        .link:hover {
+            text-shadow: 0 4px 15px;
+        }
+        .footer {
+            display:block;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        console.log("why u checkin on console")
+    </script>
+    <div class="card">
+        <h1>ILikeCats</h1>
+        <h2>HTML & JS test site</h2>
+        <hr>
+        <h3>Documentación</h3>
+        <p>
+            <ul>
+                <li><a href="https://developer.mozilla.org" class="link" target="_blank">Mozilla</a><br></li>
+                <li><a href="https://www.w3schools.com/" class="link" target="_blank">w3Schools</a><br></li>
+                <li><a href="https://htmlreference.io/" class="link" target="_blank">HTML Reference</a><br></li>
+                <li><a href="https://cssreference.io/" class="link" target="_blank">CSS Reference</a><br></li>
+                <li><a href="https://www.freecodecamp.org/espanol/learn" class="link" target="_blank">FreeCodeCamp</a></li>
+            </ul>
+        </p>
+        <hr>
+        <div class = "footer">
+        <label style="display: contents;">Revisa mi perfil de </label><a href="https://github.com/iliekcatsss" class="link" target="_blank">GitHub</a>
+        </div>
+    </div>
+    <label></label>
+    <div class="card">
+                <h1></h1>
+        <button>Botón</button>
+        <label>Esto es un label. Hay una tabla abajo.</label>
+        <table>
+            <caption>
+                Caption
+            </caption>
+            <thead>
+                <tr>
+                    <th>Header</th>
+                    <th>Header 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Column 1</td>
+                    <td>Column 2</td>
+                </tr>
+                <tr>
+                    <td>Column 3</td>
+                    <td>Column 4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="number" id="intento" placeholder="¿Qué numero es?" min="0" max="10">
+        <button onclick="adivinar()">Probar suerte</button>
+        <button onclick="number(), toggleHidden()" id="targetElement">Jugar de nuevo</button>
+        <p id="mensaje-juego"></p>
+    </div>
+    <!-- <script src="03-control-flujo/06-for.js"></script> -->
+
+    <script>
+        function toggleHidden() {
+            var element = document.getElementById("targetElement");
+            if (element.hasAttribute("hidden")) {
+                element.removeAttribute("hidden");
+            } else {
+                element.setAttribute("hidden", "hidden");
+            }
+        }
+
+        toggleHidden()
+
+        let intentos = 0;
+        let feedback = document.getElementById("mensaje-juego");
+        function number() {
+            let input = document.getElementById("intento").value;
+            intentos = 0
+            numero = Math.floor(Math.random() * 10) +1;
+            console.log(numero)
+            feedback.innerText = ""
+            input.value = ""
+        }
+
+        number()
+
+        function adivinar() {
+            let input = document.getElementById("intento").value;
+            intentos = intentos + 1;
+
+            if (input == numero) {
+                feedback.innerHTML = `
+                    <strong>Ganaste we, el número era ${numero}<br>
+                    <small>Lo hiciste en ${intentos} intentos<br>
+                `;
+                feedback.style.color = "#4caf50";
+                toggleHidden()
+            } else if (input > numero) {
+                feedback.innerHTML = `
+                    <strong>Te pasaste we<br>
+                    <small>Llevas ${intentos} intentos<br>
+                `;
+                feedback.style.color = "#ff5252"
+            } else {
+                feedback.innerHTML = `
+                <strong>Te faltó we<br>
+                <small>Llevas ${intentos} intentos<br>
+                `;
+                feedback.style.color = "#ffd740";
+            }
+        }
+    </script>
+</body>
+</html>
