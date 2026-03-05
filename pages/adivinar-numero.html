@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <div class="card">
+        <h1>Adivina el número</h1>
+        <h4>Del 1 al 10. No soy responsable de lo que pase si pones un número fuera de este rango.</h4>
+        <input type="number" id="intento" placeholder="¿Qué numero es?" min="1" max="10">
+        <button onclick="adivinar()" id="btnStart">Probar suerte</button>
+        <button onclick="number(), toggleHidden('btnReload'), toggleHidden('btnStart')" id="btnReload">Jugar de nuevo</button>
+        <p id="mensaje-juego"></p>
+        <a href="../index.html" class="link">Volver</a>
+    </div>
+    <script src="../js/adivinar-numero.js"></script>
+</body>
+</html>
