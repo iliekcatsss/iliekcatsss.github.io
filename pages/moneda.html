@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moneda</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <div id="navbar"></div>
+    <script src="../js/navbar.js"></script>
+    <div class="content">
+        <div class="card">
+            <a href="../index.html" class="link">Volver</a>
+            <h1>Conversor de moneda</h1>
+            <label>Cantidad</label>
+            <input type="number" id="cantidad" placeholder="100">
+            <label>De</label>
+            <select id="monedaOrigen">
+                <option value="USD">USD - Dólar</option>
+                <option value="MXN">MXN - Peso mexicano</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - Libra</option>
+                <option value="JPY">JPY - Yen</option>
+            </select>
+            <label>A</label>
+            <select id="monedaDestino">
+                <option value="USD">USD - Dólar</option>
+                <option value="MXN">MXN - Peso mexicano</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - Libra</option>
+                <option value="JPY">JPY - Yen</option>
+            </select>
+            <button id="convert" onclick="convertir()">Convertir</button>
+            <p id="resultado"></p>
+            <div class="footer">
+                <label style="display: contents;">Este conversor utiliza la API <a href="https://frankfurter.dev" class="link" target="_blank">Frankfurt</a>. </label>
+            </div>
+        </div>
+    </div>
+    <script src="/js/moneda.js"></script>
+</body>
+</html>

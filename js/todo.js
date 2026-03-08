@@ -22,11 +22,11 @@ function renderizarNota(contenido) {
     menuBtn.classList.add("menu-btn");
 
     const dropdown = document.createElement("div");
-    dropdown.classList.add("dropdown");
+    dropdown.classList.add("dropdown1");
     
     const borrar = document.createElement("div");
     borrar.textContent = "Eliminar";
-    borrar.classList.add("dropdown-item", "eliminar");
+    borrar.classList.add("dropdown1-item", "eliminar");
     borrar.onclick = () => {
         nota_div.remove();
         notas = notas .filter(n => n.id !== contenido.id);
@@ -35,7 +35,7 @@ function renderizarNota(contenido) {
 
     const editar = document.createElement("div");
     editar.textContent = "Editar";
-    editar.classList.add("dropdown-item", "editar");
+    editar.classList.add("dropdown1-item", "editar");
     editar.onclick = () => {
         const inputTitulo = document.createElement("input");
         inputTitulo.value = contenido.titulo;
@@ -51,6 +51,10 @@ function renderizarNota(contenido) {
         function guardarEdicion () {
             setTimeout(() => {
                 if (document.activeElement === inputTitulo || document.activeElement === inputCuerpo) {
+                    return;
+                }
+                if (inputTitulo.value === "" || inputCuerpo.value === "") {
+                    alert("No puedes dejar una nota en blanco");
                     return;
                 }
                 contenido.titulo = inputTitulo.value;

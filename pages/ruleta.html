@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<body>
+    <div id="navbar"></div>
+    <script src="/js/navbar.js"></script>
+    <div class="content">
+        <div class="card">
+            <a href="/index.html" class="link">Volver</a>
+            <p id="entries"></p>
+            <canvas id="ruleta" width="400" height="400"></canvas>
+            <input type="text" placeholder="Ingresa una entrada" maxlength="20">
+            <button onclick="addEntry()" id="btnAdd">Añadir entrada</button>
+            <button onclick="girar()" id="btnGirar">Girar</button>
+        </div>
+    </div>
+    <script src="../js/ruleta.js"></script>
+</body>
+</html>

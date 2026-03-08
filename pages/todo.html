@@ -8,20 +8,24 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
-    <div class="card">
-        <h1>Creador de notas</h1>
-        <input type="text" id="notaTitulo" placeholder="Escribe el título aquí">
-        <input type="text" id="notaContenido" placeholder="Escribe tu nota aquí">
-         <!-- <textarea id="notaContenido" name="nota" rows="4" cols="50">
-            Escribe tu nota aquí
-         </textarea> -->
-        <button onclick="crearNota()">Crear</button>
-        <div id="div1"></div>
-        <label class="footer">
-            Las notas no soportan múltiples líneas, no sé cómo ponerlo.
-        </label>
-        <a href="../index.html" class="link">Volver</a>
+    <div id="navbar"></div>
+    <script src="/js/navbar.js"></script>
+    <div class="content">
+        <div class="card">
+            <a href="../index.html" class="link">Volver</a>
+            <h1>Creador de notas</h1>
+            <input type="text" id="notaTitulo" placeholder="Escribe el título aquí">
+            <input type="text" id="notaContenido" placeholder="Escribe tu nota aquí">
+            <!-- <textarea id="notaContenido" name="nota" rows="4" cols="50">
+                Escribe tu nota aquí
+            </textarea> -->
+            <button onclick="crearNota()">Crear</button>
+            <div id="div1"></div>
+            <label class="footer">
+                Las notas no soportan múltiples líneas, no sé cómo ponerlo.
+            </label>
+        </div>
+        <script src="../js/todo.js"></script>
     </div>
-    <script src="../js/todo.js"></script>
 </body>
 </html>

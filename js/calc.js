@@ -9,10 +9,6 @@ function borrar() {
 }
 
 function calcular() {
-    if (pantalla.value = undefined) {
-        pantalla.value = "Error";
-        setTimeout(borrar, 1500);
-    }
     try {
         pantalla.value = eval(pantalla.value);
     } catch (error) {
