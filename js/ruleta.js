@@ -12,9 +12,39 @@ function addEntry() {
     actualizarLista();
 }
 
+function borrarEntrada(i) {
+    console.log(`Se borró la entrada ${i}`);
+    entradas.splice(i, 1);
+    actualizarLista();
+    dibujarRuleta();
+}
+
 function actualizarLista() {
     const lista = document.getElementById("entries");
-    lista.innerHTML = entradas.map(e => `• ${e}`).join("<br>");
+    // lista.innerHTML = entradas.map(e => `• ${e}`).join("<br>");
+    lista.innerHTML = entradas.map((e, i) =>
+        `• ${e} <span onclick="borrarEntrada(${i})" style="cursor:pointer; color: #ff4d4d;">✕</span>`
+    ).join("<br>");
+}
+
+function ajustarCanvas() {
+    const canvas = document.getElementById("ruleta");
+    const card = canvas.parentElement;
+    const size = Math.min(card.clientWidth - 50, 400);
+    canvas.width = size;
+    canvas.height = size;
+    dibujarRuleta();
+}
+
+window.addEventListener("resize", ajustarCanvas);
+ajustarCanvas(); // al cargar
+
+function barajar(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
 }
 
 function dibujarRuleta(anguloOffset = 0) {
@@ -28,28 +58,31 @@ function dibujarRuleta(anguloOffset = 0) {
 
     if (entradas.length === 0) return;
 
-    const colores = ["#5ebcb2", "#26474b", "#666", "#353535", "#2a2a2a"];
+    const coloresBase = ["#3369e8","#d50f25","#eeb211","#009925"];
+    const coloresAsignados = entradas.map((_, i) => coloresBase[i % coloresBase.length]);
     const slice = (2 *Math.PI) / entradas.length;
 
     entradas.forEach((entrada, i) => {
         const inicio = i * slice + anguloOffset;
-        const fin = inicio + slice; 
-
+        const fin = inicio + slice;
+        const fontSize = Math.max(8, 16 - entradas.length * 0.5);
+        
         ctx.beginPath();
         ctx.moveTo(cx, cy);
         ctx.arc(cx, cy, radio, inicio, fin);
         ctx.closePath();
-        ctx.fillStyle = colores[i % colores.length];
+        ctx.fillStyle = coloresAsignados[i % coloresBase.length];
         ctx.fill();
-        ctx.strokeStyle = "#121212";
-        ctx.stroke();
-
+        // vv Borde vv
+        // ctx.strokeStyle = "#121212";
+        // ctx.stroke();
+        
         ctx.save();
         ctx.translate(cx, cy);
         ctx.rotate(inicio + slice / 2);
         ctx.textAlign = "right";
         ctx.fillStyle = "white";
-        ctx.font = "bold 14px Trebuchet MS";
+        ctx.font = `bold ${fontSize}px Trebuchet MS`;
         ctx.fillText(entrada, radio - 10, 5);
         ctx.restore();
     });
