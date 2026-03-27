@@ -1,5 +1,8 @@
 /* Navbar we */
 
+#navbar {
+    width: 100%;
+}
 .navbar {
     background: #1e1e1e;
     border-bottom: 1px solid #333;
