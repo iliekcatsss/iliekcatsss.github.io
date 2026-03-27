@@ -1,0 +1,9 @@
+/* Importa todos los módulos CSS */
+/* Claude me hizo esta cosa yo no entiendo */
+
+@import url('base.css');
+@import url('navbar.css');
+@import url('card.css');
+@import url('table.css');
+@import url('components.css');
+@import url('utils.css');

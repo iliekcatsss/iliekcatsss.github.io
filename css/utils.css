@@ -1,0 +1,65 @@
+/* Link, Footer, Hover */
+
+.link {
+    text-decoration: none;
+    text-underline-offset: 3px;
+    font-weight: bold;
+    color: #065fcf;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* --- Hover (solo dispositivos con puntero) --- */
+@media (hover: hover) {
+    .grid-botones button:hover {
+        background: #444;
+    }
+
+    button:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        background: #065fcf;
+        transform: translateY(-3px);
+    }
+
+    button:active {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: translateY(1px);
+    }
+
+    .link:hover {
+        text-shadow: 0 0 15px;
+        transform: translateX(5px);
+    }
+
+    .link:hover::before {
+        content: " ";
+        color: white;
+    }
+
+    .menu-btn:hover {
+        color: #aaa;
+    }
+
+    .dropdown1-item.eliminar:hover {
+        background: #333;
+        color: #ff4d4d;
+    }
+
+    .dropdown1-item.editar:hover {
+        background: #333;
+        color: #065fcf;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+}
