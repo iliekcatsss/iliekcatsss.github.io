@@ -21,6 +21,7 @@
 .nota span {
     flex: 1;
     word-break: break-word;
+    white-space: pre-wrap;
 }
 
 .nota titulo {
@@ -77,6 +78,13 @@ button {
     padding: 15px;
     box-sizing: border-box;
     outline: invert;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
 }
 
 .grid-botones {

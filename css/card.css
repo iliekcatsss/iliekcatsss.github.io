@@ -8,7 +8,7 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     border: 1px solid #333;
     color: white;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .card.calc {

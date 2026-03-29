@@ -40,7 +40,7 @@ function renderizarNota(contenido) {
         const inputTitulo = document.createElement("input");
         inputTitulo.value = contenido.titulo;
 
-        const inputCuerpo = document.createElement("input");
+        const inputCuerpo = document.createElement("textarea");
         inputCuerpo.value = contenido.cuerpo;
 
         titulo.replaceWith(inputTitulo);
