@@ -1,8 +1,9 @@
 const input = document.getElementById('counter');
-const rLetters = document.getElementById('r-letters')
-const rNumbers = document.getElementById('r-numbers')
-const rSymbols = document.getElementById('r-symbols')
-const rSpaces = document.getElementById('r-spaces')
+const rLetters = document.getElementById('r-letters');
+const rNumbers = document.getElementById('r-numbers');
+const rSymbols = document.getElementById('r-symbols');
+const rSpaces = document.getElementById('r-spaces');
+const rAll = document.getElementById('r-all');
 
 const reLetters = /[a-záéíóúüñA-ZÁÉÍÓÚÜÑ]/g;
 const reNumbers = /[0-9]/g;
@@ -16,8 +17,9 @@ function count(str, re) {
 
 input.addEventListener('input', function() {
     const v = this.value;
-    rLetters.textContent = count(v, reLetters)
-    rNumbers.textContent = count(v, reNumbers)
-    rSymbols.textContent = count(v, reSymbols)
-    rSpaces.textContent = count(v, reSpaces)
+    rLetters.textContent = count(v, reLetters);
+    rNumbers.textContent = count(v, reNumbers);
+    rSymbols.textContent = count(v, reSymbols);
+    rSpaces.textContent = count(v, reSpaces);
+    rAll.textContent = v.length;
 });
