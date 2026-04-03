@@ -26,9 +26,14 @@ function generate() {
         pas += allChars[Math.floor(Math.random() * allChars.length)];
     }
 
-    let text = `Tu contraseña es: <strong>${pas}</strong>`;
+    let pasSafe = pas
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
 
-    if (charactersMax < 12) text += `<br>${charactersMax} es muy corto para una contraseña, se recomiendan 12 caracteres o más`
+    let text = `Tu contraseña es: <strong>${pasSafe}</strong>`;
+
+    if (charactersMax < 12) text += `<br><br><strong><u>${charactersMax} es muy corto para una contraseña, se recomiendan 12 caracteres o más</u></strong>`
 
     res.innerHTML = text;
 }
