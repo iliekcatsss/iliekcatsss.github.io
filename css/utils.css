@@ -18,6 +18,26 @@
     font-size: 12px;
 }
 
+.collapsible-content {
+    display: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+    gap: 0.5rem;
+
+}
+
+.collapsible-content.open {
+    display: block;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.collapsible p {
+    margin: 0;
+    padding: 0.2rem 0;
+}
+
 /* --- Hover (solo dispositivos con puntero) --- */
 @media (hover: hover) {
     .grid-botones button:hover {
@@ -61,5 +81,9 @@
 
     .slider:hover {
         opacity: 1;
+    }
+
+    .collapsible button:hover {
+        background: #444;
     }
 }

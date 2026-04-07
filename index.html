@@ -14,7 +14,18 @@
         <div class="card">
             <h1>ILikeCats</h1>
             <h2>HTML & JS test site</h2>
-            <h3><a href="pages/versiones.html" class="link" title="Registro de versiones">v1.5.2</a></h3>
+            <!-- <h3><a href="pages/versiones.html" class="link" title="Registro de versiones">v1.5.2</a></h3> -->
+            <div class="collapsible">
+                <button onclick="toggleCollapsible(this)">Último commit</button>
+                <div class="collapsible-content">
+                    <label for="commit-msg">Mensaje:</label>
+                    "<span id="commit-msg"></span>"
+                    <label for="commit-date">Fecha:</label>
+                    <p id="commit-date"></p>
+                    <label for="commit-link">Link:</label>
+                    <a id="commit-link" class="link" target="_blank"><span id="commit-sha"></span></a>
+                </div>
+            </div>
             <hr>
             <h3>Documentación</h3>
             <p>
@@ -24,16 +35,15 @@
                     <li><a href="https://htmlreference.io/" class="link" target="_blank">HTML Reference</a><br></li>
                     <li><a href="https://cssreference.io/" class="link" target="_blank">CSS Reference</a><br></li>
                     <li><a href="https://www.freecodecamp.org/espanol/learn" class="link" target="_blank">FreeCodeCamp</a></li>
-                    <li><a href="https://claude.ai/" class="link" target="_blank">Esclavo generador de código y corrector de errores</a><label style="font-size: 12px; display:contents;"> (jk, no te rebeles)</label></li>
+                    <li><a href="https://claude.ai/" class="link" target="_blank">Claude</a></li>
                 </ul>
             </p>
             <hr>
-            <div class = "footer">
-                <label style="display: contents;">Mi perfil en </label><a href="https://github.com/iliekcatsss" class="link" target="_blank">GitHub</a>
-            </div>
         </div>
     </div>
 
     <script>console.log("why u checkin on console")</script>
+    <script src="/js/main.js"></script>
+    <script src="/js/lastupdate.js"></script>
 </body>
 </html>

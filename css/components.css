@@ -80,6 +80,28 @@ button {
     outline: invert;
 }
 
+.collapsible button {
+    all: unset;
+    cursor: pointer;
+    padding: 6px;
+    background: #333;
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.collapsible button::after {
+    content: "▼";
+}
+
+.collapsible button.active::after {
+    content: "▲";
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 10vh));
