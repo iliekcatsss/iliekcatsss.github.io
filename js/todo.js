@@ -23,6 +23,12 @@ function renderizarNota(contenido) {
 
     const dropdown = document.createElement("div");
     dropdown.classList.add("dropdown1");
+
+    const menuWrapper = document.createElement("div");
+    menuWrapper.classList.add("menu-wrapper");
+    menuWrapper.appendChild(menuBtn);
+    menuWrapper.appendChild(dropdown);
+    nota_div.appendChild(menuWrapper);
     
     const borrar = document.createElement("div");
     borrar.textContent = "Eliminar";
@@ -118,5 +124,5 @@ function crearNota() {
 }
 
 document.addEventListener("click", () => {
-    document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("show"));
+    document.querySelectorAll(".dropdown1").forEach(d => d.classList.remove("show"));
 });
