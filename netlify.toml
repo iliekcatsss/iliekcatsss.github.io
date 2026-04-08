@@ -2,12 +2,6 @@
     publish = "."
 
 [[redirects]]
-    from = "/favicon.ico"
-    to = "/favicon.ico"
-    status = 200
-
-[[redirects]]
     from = "/:page"
     to = "/pages/:page.html"
     status = 200
-    force = false
