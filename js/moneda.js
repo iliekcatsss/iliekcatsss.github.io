@@ -9,7 +9,7 @@ function convertir() {
         return;
     }
 
-    fetch(`https://api.frankfurter.app/latest?from=${origen}&to=${destino}`)
+    fetch(`https://api.frankfurter.dev/v1/latest?from=${origen}&to=${destino}`)
         .then(res => res.json())
         .then(data => {
             let res = (data.rates[destino] * cantidad).toFixed(2)
