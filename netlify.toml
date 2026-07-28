@@ -1,7 +1,0 @@
-[build]
-    publish = "."
-
-[[redirects]]
-    from = "/:page"
-    to = "/pages/:page.html"
-    status = 200
