@@ -101,11 +101,11 @@ button {
 }
 
 .collapsible button::after {
-    content: "▼";
+    content: " ▼";
 }
 
 .collapsible button.active::after {
-    content: "▲";
+    content: " ▲";
 }
 
 .grid {
