@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruleta</title>
+    <title>Historial de commits</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -13,13 +13,13 @@
     <div class="content">
         <div class="card">
             <a href="/" class="link">Volver</a>
-            <p id="entries"></p>
-            <canvas id="ruleta"></canvas>
-            <input type="text" placeholder="Ingresa una entrada" maxlength="20">
-            <button onclick="addEntry()" id="btnAdd">Añadir entrada</button>
-            <button onclick="girar()" id="btnGirar">Girar</button>
+            <h1>Historial de commits</h1>
+            <label>Para ver el registro de cambios antiguo, click <a href="/versiones/" class="link">aquí</a></label>
+            <hr>
+            <div id="commits-list"></div>
+
         </div>
     </div>
-    <script src="/js/ruleta.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
